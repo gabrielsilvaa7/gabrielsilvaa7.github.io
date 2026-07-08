@@ -233,3 +233,49 @@ footer {
     margin-bottom: 10px;
     line-height: 1.6;
 }
+
+/* --- Hero Section - Picture Layout --- */
+#hero {
+    background: linear-gradient(135deg, #1a252f, #2c3e50); /* Same background */
+    padding: 80px 10%; /* Slightly adjusted padding */
+}
+
+.hero-container {
+    display: flex; /* Creates the columns */
+    align-items: center; /* Vertically centers the text and image */
+    justify-content: center;
+    gap: 50px; /* Space between picture and text */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-image-column {
+    flex: 0 0 280px; /* Picture column width is fixed */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-text-column {
+    flex: 1; /* Text column takes remaining space */
+    text-align: left; /* Text aligns left, matching the picture */
+}
+
+.profile-pic {
+    width: 280px;
+    height: 373px; /* Keeps the aspect ratio of image_3.png */
+    object-fit: cover; /* Ensures the image fills the space cleanly */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Soft shadow for depth */
+    border: 4px solid #ffffff; /* White border for emphasis */
+}
+
+/* --- Mobile Responsiveness for Hero --- */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Stacks image above text on phones */
+        gap: 30px;
+    }
+    .hero-text-column {
+        text-align: center; /* Center text again on mobile */
+    }
+}
