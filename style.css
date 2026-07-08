@@ -1,3 +1,39 @@
+/* --- CSS Variables & Theming --- */
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333333;
+    --heading-color: #1a252f;
+    --nav-bg: rgba(255, 255, 255, 0.85); /* For frosted glass */
+    --card-bg: #ffffff;
+    --accent-color: #0056b3;
+    --accent-hover: #003d82;
+    --hero-bg-1: #1a252f;
+    --hero-bg-2: #2c3e50;
+    --hero-text: #ffffff;
+    --hero-subtext: #d1d8e0;
+    --tag-bg: #e9ecef;
+    --tag-text: #495057;
+    --border-color: #eaeaea;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --nav-bg: rgba(18, 18, 18, 0.85);
+    --card-bg: #1e1e1e;
+    --accent-color: #64b5f6;
+    --accent-hover: #90caf9;
+    --hero-bg-1: #0b1116;
+    --hero-bg-2: #16202a;
+    --tag-bg: #333333;
+    --tag-text: #e0e0e0;
+    --border-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
 /* --- Global Styles & Reset --- */
 * {
     margin: 0;
@@ -6,35 +42,44 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling between sections */
+}
+
 body {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* --- Typography & Colors --- */
 h1, h2, h3 {
-    color: #1a252f; /* Dark Slate */
+    color: var(--heading-color);
     margin-bottom: 15px;
+    transition: color 0.4s ease;
 }
 
 a {
     text-decoration: none;
-    color: #0056b3;
+    color: var(--accent-color);
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #003d82;
+    color: var(--accent-hover);
 }
 
-/* --- Header & Navigation --- */
+/* --- Header & Navigation (Frosted Glass) --- */
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 nav {
@@ -49,56 +94,105 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #1a252f;
+    color: var(--heading-color);
 }
 
 nav ul {
     list-style: none;
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 nav ul li a {
-    color: #555;
+    color: var(--text-color);
     font-weight: 500;
 }
 
 nav ul li a:hover {
-    color: #0056b3;
+    color: var(--accent-color);
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.2);
 }
 
 /* --- Hero Section --- */
 #hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #1a252f, #2c3e50);
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--hero-bg-1), var(--hero-bg-2));
+    padding: 80px 10%;
+    color: var(--hero-text);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-image-column {
+    flex: 0 0 280px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-text-column {
+    flex: 1;
+    text-align: left;
 }
 
 #hero h1 {
-    color: #ffffff;
+    color: var(--hero-text);
     font-size: 2.8rem;
     margin-bottom: 20px;
 }
 
-#hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
+#hero p strong {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+}
+
+.about-text {
+    font-size: 1.1rem;
+    max-width: 800px;
     margin: 0 auto 30px auto;
-    color: #d1d8e0;
+    color: var(--hero-subtext);
+    text-align: justify;
+}
+
+.profile-pic {
+    width: 280px;
+    height: 373px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border: 4px solid var(--hero-text);
 }
 
 .btn {
     display: inline-block;
     padding: 12px 28px;
-    background-color: #0056b3;
+    background-color: var(--accent-color);
     color: #ffffff;
     border-radius: 5px;
     font-weight: bold;
 }
 
 .btn:hover {
-    background-color: #003d82;
+    background-color: var(--accent-hover);
     color: #ffffff;
 }
 
@@ -115,110 +209,43 @@ section h2 {
     margin-bottom: 50px;
 }
 
-/* --- Project Grid & Cards --- */
+/* --- Project & Experience Cards (Enhanced Hover Effects) --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
+.project-card, .experience-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
 .project-card {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-top: 4px solid #0056b3;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--accent-color);
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-}
-
-.project-card h3 {
-    font-size: 1.3rem;
-}
-
-.project-card p {
-    color: #666;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-.tech-tag {
-    display: inline-block;
-    background-color: #e9ecef;
-    color: #495057;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin-right: 8px;
-    margin-bottom: 8px;
-}
-
-/* --- Contact & Footer --- */
-#contact {
-    text-align: center;
-    background-color: #ffffff;
-    margin-bottom: 0;
-    border-top: 1px solid #eaeaea;
-}
-
-#contact p {
-    margin-bottom: 30px;
-    color: #555;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1a252f;
-    color: #a4b0be;
-    font-size: 0.9rem;
-}
-
-/* --- Updates for About Text --- */
-.about-text {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    color: #d1d8e0;
-    text-align: justify;
-}
-
-#hero p strong {
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 25px;
-    color: #64b5f6; /* Light blue accent */
-}
-
-/* --- Experience Cards --- */
 .experience-card {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-left: 5px solid #0056b3;
+    border-left: 5px solid var(--accent-color);
     margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.experience-card:hover {
-    transform: translateX(5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+.project-card:hover, .experience-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.15);
+    border-color: var(--accent-hover);
 }
 
 .experience-card h3 {
     font-size: 1.5rem;
-    color: #1a252f;
     margin-bottom: 5px;
 }
 
 .experience-card h4 {
-    color: #0056b3;
+    color: var(--accent-color);
     margin-bottom: 15px;
     font-weight: 600;
     font-size: 1.1rem;
@@ -226,7 +253,6 @@ footer {
 
 .experience-card ul {
     margin-left: 20px;
-    color: #555;
 }
 
 .experience-card li {
@@ -234,48 +260,72 @@ footer {
     line-height: 1.6;
 }
 
-/* --- Hero Section - Picture Layout --- */
-#hero {
-    background: linear-gradient(135deg, #1a252f, #2c3e50); /* Same background */
-    padding: 80px 10%; /* Slightly adjusted padding */
+.project-card h3 {
+    font-size: 1.3rem;
 }
 
-.hero-container {
-    display: flex; /* Creates the columns */
-    align-items: center; /* Vertically centers the text and image */
-    justify-content: center;
-    gap: 50px; /* Space between picture and text */
-    max-width: 1100px;
-    margin: 0 auto;
+.project-card p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
 
-.hero-image-column {
-    flex: 0 0 280px; /* Picture column width is fixed */
-    display: flex;
-    justify-content: center;
+.tech-tag {
+    display: inline-block;
+    background-color: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-.hero-text-column {
-    flex: 1; /* Text column takes remaining space */
-    text-align: left; /* Text aligns left, matching the picture */
+/* --- Scroll Reveal Animations --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
 }
 
-.profile-pic {
-    width: 280px;
-    height: 373px; /* Keeps the aspect ratio of image_3.png */
-    object-fit: cover; /* Ensures the image fills the space cleanly */
-    border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* Soft shadow for depth */
-    border: 4px solid #ffffff; /* White border for emphasis */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* --- Mobile Responsiveness for Hero --- */
+/* --- Contact & Footer --- */
+#contact {
+    text-align: center;
+    background-color: var(--card-bg);
+    margin-bottom: 0;
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+#contact p {
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--hero-bg-1);
+    color: var(--hero-subtext);
+    font-size: 0.9rem;
+}
+
+/* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .hero-container {
-        flex-direction: column; /* Stacks image above text on phones */
+        flex-direction: column;
         gap: 30px;
     }
     .hero-text-column {
-        text-align: center; /* Center text again on mobile */
+        text-align: center;
+    }
+    nav ul {
+        gap: 15px;
+        font-size: 0.9rem;
     }
 }
