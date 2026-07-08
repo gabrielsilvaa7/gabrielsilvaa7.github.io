@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header>
         <nav>
             <div class="logo">Portfolio</div>
@@ -17,21 +16,18 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">🌙</button></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero / About Section -->
-<!-- Hero / About Section -->
     <section id="hero">
         <div class="hero-container">
             
-            <!-- NEW: Picture Column -->
             <div class="hero-image-column">
                 <img src="profile-picture.png" alt="José Gabriel - Commercial Analyst" class="profile-pic">
             </div>
 
-            <!-- Existing Text Column (Updated layout) -->
             <div class="hero-text-column">
                 <h1>Hi, I'm José Gabriel</h1>
                 <p><strong>Commercial Analyst & Data Developer</strong></p>
@@ -44,7 +40,6 @@
         </div>
     </section>
 
-    <!-- Professional Experience Section -->
     <section id="experience">
         <h2>Professional Experience</h2>
         
@@ -73,7 +68,6 @@
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
     <section id="projects">
         <h2>Featured Projects</h2>
         <div class="project-grid">
@@ -102,7 +96,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2>Let's Connect</h2>
         <p>Interested in data automation, commercial models, or technical collaborations?</p>
@@ -113,5 +106,34 @@
         <p>&copy; 2026. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. Scroll Reveal Animation Logic
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            const elementsToAnimate = document.querySelectorAll('section, .experience-card, .project-card');
+            elementsToAnimate.forEach((el) => {
+                el.classList.add('reveal');
+                observer.observe(el);
+            });
+
+            // 2. Dark Mode Toggle Logic
+            const themeBtn = document.getElementById('theme-toggle');
+            themeBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                if(document.body.classList.contains('dark-mode')) {
+                    themeBtn.textContent = '☀️';
+                } else {
+                    themeBtn.textContent = '🌙';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
