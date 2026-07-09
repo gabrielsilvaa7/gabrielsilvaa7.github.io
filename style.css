@@ -1,3 +1,7 @@
+/* --- Language Display Logic --- */
+body.lang-en .pt { display: none !important; }
+body.lang-pt .en { display: none !important; }
+
 /* --- CSS Variables & Theming --- */
 :root {
     --bg-color: #f8f9fa;
@@ -43,7 +47,7 @@ body.dark-mode {
 }
 
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling between sections */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -70,7 +74,7 @@ a:hover {
     color: var(--accent-hover);
 }
 
-/* --- Header & Navigation (Frosted Glass) --- */
+/* --- Header & Navigation --- */
 header {
     background-color: var(--nav-bg);
     backdrop-filter: blur(12px);
@@ -113,16 +117,24 @@ nav ul li a:hover {
     color: var(--accent-color);
 }
 
-.theme-btn {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.nav-buttons {
+    display: flex;
+    gap: 15px;
 }
 
-.theme-btn:hover {
-    transform: scale(1.2);
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-btn:hover {
+    transform: scale(1.15);
+    color: var(--accent-color);
 }
 
 /* --- Hero Section --- */
@@ -186,14 +198,13 @@ nav ul li a:hover {
     display: inline-block;
     padding: 12px 28px;
     background-color: var(--accent-color);
-    color: #ffffff;
+    color: #ffffff !important;
     border-radius: 5px;
     font-weight: bold;
 }
 
 .btn:hover {
     background-color: var(--accent-hover);
-    color: #ffffff;
 }
 
 /* --- Section Formatting --- */
@@ -209,7 +220,7 @@ section h2 {
     margin-bottom: 50px;
 }
 
-/* --- Project & Experience Cards (Enhanced Hover Effects) --- */
+/* --- Project & Experience Cards --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -315,17 +326,58 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- Mobile Responsiveness --- */
+/* --- Mobile Responsiveness Enhancements --- */
 @media (max-width: 768px) {
+    /* Stack navigation for smaller screens */
+    header nav {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .nav-buttons {
+        width: 100%;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    /* Stack hero image and text */
     .hero-container {
         flex-direction: column;
         gap: 30px;
     }
+    
     .hero-text-column {
         text-align: center;
     }
-    nav ul {
-        gap: 15px;
-        font-size: 0.9rem;
+
+    /* Adjust typography and padding for mobile */
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    section {
+        padding: 50px 5%;
+    }
+    
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 35px;
+    }
+    
+    /* Slightly shrink profile picture so it doesn't overwhelm the screen */
+    .hero-image-column {
+        flex: 0 0 auto;
+    }
+    
+    .profile-pic {
+        width: 220px;
+        height: 293px;
     }
 }
