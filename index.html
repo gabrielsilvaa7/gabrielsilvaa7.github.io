@@ -6,17 +6,41 @@
     <title>Professional Portfolio | Data & Commercial Analytics</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="lang-en">
 
     <header>
         <nav>
             <div class="logo">Portfolio</div>
             <ul>
-                <li><a href="#hero">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">🌙</button></li>
+                <li>
+                    <a href="#hero">
+                        <span class="en">About</span>
+                        <span class="pt">Sobre</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#experience">
+                        <span class="en">Experience</span>
+                        <span class="pt">Experiência</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects">
+                        <span class="en">Projects</span>
+                        <span class="pt">Projetos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <span class="en">Contact</span>
+                        <span class="pt">Contato</span>
+                    </a>
+                </li>
+                <!-- Toggles -->
+                <li class="nav-buttons">
+                    <button id="lang-toggle" class="nav-btn" aria-label="Toggle Language">PT</button>
+                    <button id="theme-toggle" class="nav-btn" aria-label="Toggle Dark Mode">🌙</button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -29,74 +53,127 @@
             </div>
 
             <div class="hero-text-column">
-                <h1>Hi, I'm José Gabriel</h1>
-                <p><strong>Commercial Analyst & Data Developer</strong></p>
-                <p class="about-text">
+                <h1 class="en">Hi, I'm José Gabriel</h1>
+                <h1 class="pt">Olá, eu sou José Gabriel</h1>
+                
+                <p class="en"><strong>Commercial Analyst & Data Developer</strong></p>
+                <p class="pt"><strong>Analista Comercial e Desenvolvedor de Dados</strong></p>
+                
+                <p class="about-text en">
                     I am an expert in data analysis, Excel, Power BI, PowerPoint, and data visualization using SQL and Python. I hold a Licentiate degree in Informatics from Uniasselvi and am currently pursuing an MBA in Commercial Management and Market Intelligence. Dedicated to continuous learning, I have completed Harvard's CS50P and am currently advancing my skills in Python (focused on Business Intelligence, AI, and Machine Learning), HTML, CSS, and SQL through Codecademy.
                 </p>
-                <a href="#experience" class="btn">View My Experience</a>
+                <p class="about-text pt">
+                    Sou especialista em análise de dados, Excel, Power BI, PowerPoint e visualização de dados com SQL e Python. Sou formado em Licenciatura em Informática pela Uniasselvi e atualmente curso MBA em Gestão Comercial e Inteligência de Mercado. Dedicado ao aprendizado contínuo, concluí o curso CS50P de Harvard e estou aprimorando minhas habilidades em Python (foco em Business Intelligence, IA e Machine Learning), HTML, CSS e SQL pela Codecademy.
+                </p>
+                
+                <a href="#experience" class="btn en">View My Experience</a>
+                <a href="#experience" class="btn pt">Ver Minha Experiência</a>
             </div>
             
         </div>
     </section>
 
     <section id="experience">
-        <h2>Professional Experience</h2>
+        <h2 class="en">Professional Experience</h2>
+        <h2 class="pt">Experiência Profissional</h2>
         
         <div class="experience-card">
-            <h3>Commercial Analyst</h3>
+            <h3 class="en">Commercial Analyst</h3>
+            <h3 class="pt">Analista Comercial</h3>
             <h4>Astemo Manaus Brake Systems</h4>
             <ul>
-                <li>Extracted and manipulated data using SQL (Protheus ERP) and performed advanced analytics in Excel to support strategic decision-making.</li>
-                <li>Collaborated in meetings with Astemo USA to present projects and Cost Reduction results.</li>
-                <li>Spearheaded complex pricing negotiations with key accounts (Honda, Yamaha, and Kawasaki), successfully securing product price increases that drove R$ 14 million in additional sales revenue within a single year.</li>
-                <li>Developed detailed product pricing breakdowns and administered company price tables, updating them based on economic indices and exchange rate fluctuations.</li>
-                <li>Created comprehensive monthly performance reports for executive review.</li>
-                <li>Coordinated foreign trade processes for the exportation of parts.</li>
+                <li class="en">Extracted and manipulated data using SQL (Protheus ERP) and performed advanced analytics in Excel to support strategic decision-making.</li>
+                <li class="pt">Extração e manipulação de dados via SQL (ERP Protheus) e análises avançadas em Excel para suporte à decisão.</li>
+                
+                <li class="en">Collaborated in meetings with Astemo USA to present projects and Cost Reduction results.</li>
+                <li class="pt">Participação em reuniões com a Astemo EUA para apresentação de projetos e resultados de Cost Reduction.</li>
+                
+                <li class="en">Spearheaded complex pricing negotiations with key accounts (Honda, Yamaha, and Kawasaki), successfully securing product price increases that drove R$ 14 million in additional sales revenue within a single year.</li>
+                <li class="pt">Liderei negociações complexas de preços com contas-chave (Honda, Yamaha e Kawasaki), garantindo com sucesso aumentos de preços de produtos que geraram R$ 14 milhões em receita de vendas adicional em um único ano.</li>
+                
+                <li class="en">Developed detailed product pricing breakdowns and administered company price tables, updating them based on economic indices and exchange rate fluctuations.</li>
+                <li class="pt">Desenvolvimento de breakdown de preços de produtos e gestão das tabelas de preços da empresa, atualizando-as com base em índices econômicos e variações cambiais.</li>
+                
+                <li class="en">Created comprehensive monthly performance reports for executive review.</li>
+                <li class="pt">Criação de relatórios mensais abrangentes de performance para revisão executiva.</li>
+                
+                <li class="en">Coordinated foreign trade processes for the exportation of parts.</li>
+                <li class="pt">Coordenação de processos de comércio exterior para exportação de peças.</li>
             </ul>
         </div>
 
         <div class="experience-card">
-            <h3>Planning Analyst (PCP)</h3>
+            <h3 class="en">Planning Analyst (PCP)</h3>
+            <h3 class="pt">Analista de Planejamento (PCP)</h3>
             <h4>Astemo Manaus Brake Systems</h4>
             <ul>
-                <li>Managed monthly and annual production plans across all clients, reporting directly to top management and production areas.</li>
-                <li>Optimized data extraction from Protheus ERP using SQL, streamlining closing reports for production, scrap, and machine downtime.</li>
-                <li>Automated processes using Power Automate to seamlessly consolidate Kanban orders received via email.</li>
-                <li>Assisted in the initial deployment of the L2L system by translating training materials from English to Portuguese for the PCP, Production, and Maintenance departments.</li>
+                <li class="en">Managed monthly and annual production plans across all clients, reporting directly to top management and production areas.</li>
+                <li class="pt">Gestão dos planos mensais e anuais de todos os clientes para reporte à alta gestão e áreas produtivas.</li>
+                
+                <li class="en">Optimized data extraction from Protheus ERP using SQL, streamlining closing reports for production, scrap, and machine downtime.</li>
+                <li class="pt">Otimização da extração de dados do ERP Protheus via SQL, agilizando relatórios de fechamento (Produção, Refugo e Paradas de Máquina).</li>
+                
+                <li class="en">Automated processes using Power Automate to seamlessly consolidate Kanban orders received via email.</li>
+                <li class="pt">Automação de processos via Power Automate para consolidação automática de Kanbans recebidos por e-mail.</li>
+                
+                <li class="en">Assisted in the initial deployment of the L2L system by translating training materials from English to Portuguese for the PCP, Production, and Maintenance departments.</li>
+                <li class="pt">Auxílio na implantação inicial do sistema L2L, traduzindo materiais de treinamento do inglês para o português para os departamentos de PCP, Produção e Manutenção.</li>
             </ul>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Featured Projects</h2>
+        <h2 class="en">Featured Projects</h2>
+        <h2 class="pt">Projetos em Destaque</h2>
+        
         <div class="project-grid">
             
             <div class="project-card">
-                <h3>Strategic Pricing & Revenue Optimization</h3>
-                <p>Led complex B2B pricing negotiations with major accounts (Honda, Yamaha, Kawasaki), successfully implementing strategic adjustments that secured R$ 14 million in additional sales revenue in one year.</p>
-                <span class="tech-tag">B2B Negotiation</span>
-                <span class="tech-tag">Pricing Strategy</span>
-                <span class="tech-tag">Key Account Management</span>
+                <h3 class="en">Strategic Pricing & Revenue Optimization</h3>
+                <h3 class="pt">Precificação Estratégica e Otimização de Receita</h3>
+                
+                <p class="en">Led complex B2B pricing negotiations with major accounts (Honda, Yamaha, Kawasaki), successfully implementing strategic adjustments that secured R$ 14 million in additional sales revenue in one year.</p>
+                <p class="pt">Liderei negociações complexas de preços B2B com grandes contas (Honda, Yamaha, Kawasaki), implementando ajustes estratégicos que garantiram R$ 14 milhões em receita adicional de vendas em um ano.</p>
+                
+                <span class="tech-tag en">B2B Negotiation</span>
+                <span class="tech-tag pt">Negociação B2B</span>
+                
+                <span class="tech-tag en">Pricing Strategy</span>
+                <span class="tech-tag pt">Estratégia de Preços</span>
+                
+                <span class="tech-tag en">Key Account Management</span>
+                <span class="tech-tag pt">Gestão de Contas-Chave</span>
             </div>
 
             <div class="project-card">
-                <h3>Automated Exchange Rate Reporting Tool</h3>
-                <p>Developed an automated pipeline using Power Query to streamline quarterly multi-currency global negotiations, eliminating manual file processing and optimizing table schemas for data integrity.</p>
+                <h3 class="en">Automated Exchange Rate Reporting Tool</h3>
+                <h3 class="pt">Ferramenta Automatizada de Relatório de Câmbio</h3>
+                
+                <p class="en">Developed an automated pipeline using Power Query to streamline quarterly multi-currency global negotiations, eliminating manual file processing and optimizing table schemas for data integrity.</p>
+                <p class="pt">Desenvolvimento de pipeline automatizado usando Power Query para otimizar negociações globais trimestrais em múltiplas moedas, eliminando o processamento manual de arquivos e otimizando esquemas de tabelas.</p>
+                
                 <span class="tech-tag">Power Query</span>
                 <span class="tech-tag">Excel</span>
             </div>
 
             <div class="project-card">
-                <h3>ERP Database Optimization & Query Design</h3>
-                <p>Designed and debugged complex SQL queries for Protheus ERP environments to manage backend production orders, tracking accurate financial outputs and decimal pricing precision.</p>
+                <h3 class="en">ERP Database Optimization & Query Design</h3>
+                <h3 class="pt">Otimização de Banco de Dados ERP e Design de Queries</h3>
+                
+                <p class="en">Designed and debugged complex SQL queries for Protheus ERP environments to manage backend production orders, tracking accurate financial outputs and decimal pricing precision.</p>
+                <p class="pt">Design e depuração de queries SQL complexas para ERP Protheus gerenciando ordens de produção, rastreando resultados financeiros precisos e precisão de preços decimais.</p>
+                
                 <span class="tech-tag">SQL Server</span>
                 <span class="tech-tag">ERP Protheus</span>
             </div>
 
             <div class="project-card">
-                <h3>Commercial & Margin Tracking Dashboard</h3>
-                <p>Built dynamic dashboards tracking key industrial metrics like Markup, Margin, and currency parity fluctuations to drive executive decision-making.</p>
+                <h3 class="en">Commercial & Margin Tracking Dashboard</h3>
+                <h3 class="pt">Dashboard Comercial e Rastreamento de Margem</h3>
+                
+                <p class="en">Built dynamic dashboards tracking key industrial metrics like Markup, Margin, and currency parity fluctuations to drive executive decision-making.</p>
+                <p class="pt">Criação de dashboards dinâmicos rastreando métricas industriais chave como Markup, Margem e flutuações de paridade cambial para apoiar a tomada de decisão executiva.</p>
+                
                 <span class="tech-tag">Power BI</span>
                 <span class="tech-tag">DAX</span>
             </div>
@@ -105,13 +182,19 @@
     </section>
 
     <section id="contact">
-        <h2>Let's Connect</h2>
-        <p>Interested in data automation, commercial models, or technical collaborations?</p>
-        <a href="mailto:josegabrielsilvaneves@gmail.com" class="btn">Send Email</a>
+        <h2 class="en">Let's Connect</h2>
+        <h2 class="pt">Vamos Conversar</h2>
+        
+        <p class="en">Interested in data automation, commercial models, or technical collaborations?</p>
+        <p class="pt">Interessado em automação de dados, modelos comerciais ou colaborações técnicas?</p>
+        
+        <a href="mailto:josegabrielsilvaneves@gmail.com" class="btn en">Send Email</a>
+        <a href="mailto:josegabrielsilvaneves@gmail.com" class="btn pt">Enviar E-mail</a>
     </section>
 
     <footer>
-        <p>&copy; 2026. All rights reserved.</p>
+        <p class="en">&copy; 2026. All rights reserved.</p>
+        <p class="pt">&copy; 2026. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -139,6 +222,23 @@
                     themeBtn.textContent = '☀️';
                 } else {
                     themeBtn.textContent = '🌙';
+                }
+            });
+
+            // 3. Language Toggle Logic
+            const langBtn = document.getElementById('lang-toggle');
+            langBtn.addEventListener('click', () => {
+                const body = document.body;
+                if (body.classList.contains('lang-en')) {
+                    body.classList.remove('lang-en');
+                    body.classList.add('lang-pt');
+                    langBtn.textContent = 'EN';
+                    document.documentElement.lang = 'pt-BR';
+                } else {
+                    body.classList.remove('lang-pt');
+                    body.classList.add('lang-en');
+                    langBtn.textContent = 'PT';
+                    document.documentElement.lang = 'en';
                 }
             });
         });
