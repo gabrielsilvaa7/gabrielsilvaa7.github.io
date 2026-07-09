@@ -36,9 +36,8 @@
                         <span class="pt">Contato</span>
                     </a>
                 </li>
-                <!-- Toggles -->
                 <li class="nav-buttons">
-                    <button id="lang-toggle" class="nav-btn" aria-label="Toggle Language">PT</button>
+                    <button id="lang-toggle" class="nav-btn" aria-label="Toggle Language">Português</button>
                     <button id="theme-toggle" class="nav-btn" aria-label="Toggle Dark Mode">🌙</button>
                 </li>
             </ul>
@@ -188,8 +187,13 @@
         <p class="en">Interested in data automation, commercial models, or technical collaborations?</p>
         <p class="pt">Interessado em automação de dados, modelos comerciais ou colaborações técnicas?</p>
         
-        <a href="mailto:josegabrielsilvaneves@gmail.com" class="btn en">Send Email</a>
-        <a href="mailto:josegabrielsilvaneves@gmail.com" class="btn pt">Enviar E-mail</a>
+        <div class="contact-buttons">
+            <a href="mailto:josegabrielsilvaneves@gmail.com" class="btn en">Send Email</a>
+            <a href="mailto:josegabrielsilvaneves@gmail.com" class="btn pt">Enviar E-mail</a>
+            
+            <a href="https://wa.me/5592000000000" target="_blank" class="btn whatsapp-btn en">WhatsApp</a>
+            <a href="https://wa.me/5592000000000" target="_blank" class="btn whatsapp-btn pt">WhatsApp</a>
+        </div>
     </section>
 
     <footer>
@@ -225,19 +229,19 @@
                 }
             });
 
-            // 3. Language Toggle Logic
+            // 3. Language Toggle Logic (Updated to full words)
             const langBtn = document.getElementById('lang-toggle');
             langBtn.addEventListener('click', () => {
                 const body = document.body;
                 if (body.classList.contains('lang-en')) {
                     body.classList.remove('lang-en');
                     body.classList.add('lang-pt');
-                    langBtn.textContent = 'EN';
+                    langBtn.textContent = 'English'; // Text shows what language to switch TO
                     document.documentElement.lang = 'pt-BR';
                 } else {
                     body.classList.remove('lang-pt');
                     body.classList.add('lang-en');
-                    langBtn.textContent = 'PT';
+                    langBtn.textContent = 'Português'; 
                     document.documentElement.lang = 'en';
                 }
             });
