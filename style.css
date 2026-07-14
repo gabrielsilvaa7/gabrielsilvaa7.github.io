@@ -405,6 +405,11 @@ footer {
         width: 100%;
         max-width: 250px;
     }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
 /* Container for Hero Buttons */
@@ -425,11 +430,6 @@ footer {
     background-color: #ffffff !important;
     color: var(--hero-bg-1) !important;
 }
-
-.hero-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
 
 /* --- CV Dropdown --- */
 .dropdown {
