@@ -193,7 +193,6 @@ nav ul li a:hover {
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border: 4px solid var(--hero-text);
 }
 
 /* --- Buttons --- */
@@ -224,6 +223,75 @@ nav ul li a:hover {
 
 .whatsapp-btn:hover {
     background-color: var(--whatsapp-hover);
+}
+
+/* Container for Hero Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* Secondary Outline Button Style */
+.outline-btn {
+    background-color: transparent !important;
+    border: 2px solid #ffffff;
+    color: #ffffff !important;
+}
+
+.outline-btn:hover {
+    background-color: #ffffff !important;
+    color: var(--hero-bg-1) !important;
+}
+
+/* --- CV Dropdown --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    outline: none;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: var(--card-bg);
+    min-width: 220px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    z-index: 1000;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    top: 110%;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--tag-bg);
+    color: var(--accent-color);
 }
 
 /* --- Section Formatting --- */
@@ -312,6 +380,73 @@ section h2 {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* --- Certification Cards --- */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.cert-card {
+    background-color: var(--card-bg);
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    border-top: 4px solid var(--accent-color);
+}
+
+a.cert-link:hover {
+    color: var(--text-color);
+}
+
+.cert-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.15);
+    border-color: var(--accent-hover);
+}
+
+.cert-logo {
+    height: 55px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.cert-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+    color: var(--heading-color);
+}
+
+.cert-card h4 {
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.view-cert {
+    margin-top: auto;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.cert-card:hover .view-cert {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
 /* --- Scroll Reveal Animations --- */
 .reveal {
     opacity: 0;
@@ -345,7 +480,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* --- Mobile Responsiveness Enhancements --- */
+/* --- Mobile Responsiveness (MUST REMAIN AT BOTTOM) --- */
 @media (max-width: 768px) {
     header nav {
         flex-direction: column;
@@ -410,74 +545,4 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
     }
-}
-
-/* Container for Hero Buttons */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-/* Secondary Outline Button Style */
-.outline-btn {
-    background-color: transparent !important;
-    border: 2px solid #ffffff;
-    color: #ffffff !important;
-}
-
-.outline-btn:hover {
-    background-color: #ffffff !important;
-    color: var(--hero-bg-1) !important;
-}
-
-/* --- CV Dropdown --- */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    outline: none; /* Removes the blue box when tapped on mobile */
-}
-
-.dropdown-content {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    background-color: var(--card-bg);
-    min-width: 220px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border-radius: 8px;
-    z-index: 1000;
-    top: 130%; /* Starts slightly lower for a smooth slide-up animation */
-    left: 50%;
-    transform: translateX(-50%);
-    transition: all 0.3s ease;
-}
-
-/* Show dropdown on hover (desktop) or tap/focus (mobile) */
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    visibility: visible;
-    opacity: 1;
-    top: 110%; /* Slides up into place */
-}
-
-.dropdown-content a {
-    color: var(--text-color);
-    padding: 15px 20px;
-    text-decoration: none;
-    display: block;
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-content a:last-child {
-    border-bottom: none; /* Removes the line under the bottom option */
-}
-
-.dropdown-content a:hover {
-    background-color: var(--tag-bg);
-    color: var(--accent-color);
 }
